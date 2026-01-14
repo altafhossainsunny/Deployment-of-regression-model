@@ -1,0 +1,31 @@
+<!Doctype>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the FWI prediction Page</h1>
+    </header>
+    <main>
+      <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <input type="text" name="Temperature" placeholder="Temperature" required /><br>
+        <input type="text" name="RH" placeholder="RH" required /><br>
+        <input type="text" name="Ws" placeholder="Ws" required /><br>
+        <input type="text" name="Rain" placeholder="Rain" required /><br>
+        <input type="text" name="FFMC" placeholder="FFMC" required /><br>
+        <input type="text" name="DMC" placeholder="DMC" required /><br>
+        <input type="text" name="ISI" placeholder="ISI" required /><br>
+        <input type="text" name="Classes" placeholder="Classes" required /><br>
+        <input type ="text" name="Region" placeholder="Region" required /><br>
+        <button type="submit" class = "btn btn-primary btn-block btn-large"> Predict FWI </button>
+      </form>
+      <h2>The prediction result is: {{ prediction_text }}</h2>
+    </main>
+    <footer>
+      <p>&copy; 2026 My Website</p>
+    </footer>
+  </body>
